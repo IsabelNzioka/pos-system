@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.util.logging.FileHandler;
 import java.util.logging.Logger;
 
+import com.systechafrica.service.PosService;
+import com.systechafrica.service.impl.PosServiceImpl;
 import com.systechafrica.util.CustomFormatter;
 
 /**
@@ -30,6 +32,8 @@ public class PointOfSaleApplication {
 
     public static void main(String[] args) {
         initializeLogger();
-        System.out.println("Hello World!");
+        
+        PosService posService = new PosServiceImpl();
+        posService.startApplication(LOGGER);
     }
 }
