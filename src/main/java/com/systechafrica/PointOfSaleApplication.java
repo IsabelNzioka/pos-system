@@ -30,10 +30,13 @@ public class PointOfSaleApplication {
     }
 
 
-    public static void main(String[] args) {
-        initializeLogger();
+    public static void main(String[] args)  throws IOException{
         
-        PosService posService = new PosServiceImpl();
-        posService.startApplication(LOGGER);
+        initializeLogger();
+
+        PosService posService = new PosServiceImpl(LOGGER);
+        posService.startApplication();;
+
+        
     }
 }
